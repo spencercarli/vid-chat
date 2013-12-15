@@ -25,6 +25,10 @@ Router.map(function() {
     path: '/dashboard/submit'
   });
 
+  this.route('profile', {
+    path: '/profile'
+  });
+
   this.route('videoDiscussion', {
     path: '/dashboard/:_id',
     data: function() { 

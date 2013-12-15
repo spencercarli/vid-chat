@@ -1,0 +1,11 @@
+<template name="profile">
+	{{#if currentUser}}
+		<h3>Add your name</h3>
+		<form id="profile">
+			<input type="text" class="form-control" id="name">
+			<button class="btn btn-primary pull-right" id="submit">Update</button>
+		</form>
+	{{else}}
+		<p>You think you can come up in here and try to mod a profile withouteven making an account first? You must be trippin' yo</p>
+	{{/if}}
+</template>

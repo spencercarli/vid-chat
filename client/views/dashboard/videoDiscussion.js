@@ -21,6 +21,7 @@ Template.videoDiscussion.events({
 			var comment = {
 				videoId: this._id,
 				userId: currentUser._id,
+				userName: currentUser.profile.name,
 				message: message
 			}
 
