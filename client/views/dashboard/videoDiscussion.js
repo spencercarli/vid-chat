@@ -13,7 +13,10 @@ Template.videoDiscussion.events({
 		var currentUser = Meteor.user();
 		
 		if (currentUser != null){
-			var message = $('#message').val();
+			var form = $('#comment-form');
+			var mess = form.find('#message');
+			var message = mess.val();
+			mess.val("");
 
 			var comment = {
 				videoId: this._id,
