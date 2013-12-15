@@ -5,10 +5,11 @@ Template.videoSubmit.events({
 		var currentUser = Meteor.user();
 
 		if (currentUser != null){
+			var form = $('#new-video-form');
 			var video = {
 				userId: currentUser._id,
-				title: $('#title').val(),
-				url: $('#videoURL').val()
+				title: form.find('#title').val(),
+				url: form.find('#videoURL').val()
 			}
 			
 			video._id = Videos.insert(video);
