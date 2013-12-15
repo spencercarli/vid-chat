@@ -14,10 +14,14 @@
 		</div>
 	</div>
 	<div class="row well">
-		<div class="form-group comment-section">
-			<input id="message" type="textarea" class="form-control">
-			<br>
-			<input type="submit" class="btn btn-primary pull-right" id="submit">
-		</div>
+		{{#if currentUser}}
+			<div class="form-group comment-section">
+				<input id="message" type="textarea" class="form-control">
+				<br>
+				<input type="submit" class="btn btn-primary pull-right" id="submit">
+			</div>
+		{{else}}
+			<p>Please <a href="/sign-in">sign in</a> to comment.</p>
+		{{/if}}
 	</div>
 </template>

@@ -10,13 +10,20 @@ Template.videoDiscussion.events({
 	'click #submit': function(e){
 		e.preventDefault();
 
-		var message = $('#message').val();
+		var currentUser = Meteor.user();
+		
+		if (currentUser != null){
+			var message = $('#message').val();
 
-		var comment = {
-			videoId: this._id,
-			message: message
+			var comment = {
+				videoId: this._id,
+				userId: currentUser._id,
+				message: message
+			}
+
+			Comments.insert(comment);
+		} else {
+			alert('Yo dawg you\'re not signed in.');
 		}
-
-		Comments.insert(comment);
 	}
 });
