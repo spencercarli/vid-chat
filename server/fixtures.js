@@ -1,5 +1,5 @@
 if (Videos.find().count() === 0){
-	Videos.insert({
+	var porscheId = Videos.insert({
 		title: "Porsche 918 Spyder driven - is it better than a Bugatti Veyron?",
 		url: "www.youtube.com/embed/D9vBKEGjytE"
 	});
@@ -7,5 +7,10 @@ if (Videos.find().count() === 0){
 	Videos.insert({
 		title: "Jaguar C-X75 hypercar - LaFerrari and McLaren P1 rival",
 		url: "www.youtube.com/embed/CspcnZ1IBs8"
+	});
+
+	Comments.insert({
+		videoId: porscheId,
+		message: 'Meow meow meow'
 	});
 }
